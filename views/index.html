@@ -1,32 +1,50 @@
 <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clockwork | Timestamp API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="intro">
+        <p class="eyebrow">UTILITY API / 01</p>
+        <h1>Clockwork timestamp service.</h1>
+        <p class="lead">Turn a valid date or Unix timestamp into a dependable JSON response. No keys, accounts, or configuration required.</p>
+        <a class="current-time" href="/api">Get the current timestamp <span aria-hidden="true">&#8594;</span></a>
+      </section>
 
-<html>
-   <head>
-      <title>Timestamp Microservice | freeCodeCamp.org</title>
-      <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
+      <section class="api-card" aria-labelledby="api-title">
+        <div class="card-heading">
+          <p class="eyebrow">ENDPOINT</p>
+          <h2 id="api-title">Make a request</h2>
+        </div>
+        <div class="endpoint"><span>GET</span><code>/api/:date?</code></div>
+        <p class="description">Use an ISO-style date or a Unix timestamp in milliseconds. Leave the date out to receive the current time.</p>
 
-   <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
-    <div class="container">
-      <h2>Example Usage:</h2>
-      <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-      </ul>
+        <div class="examples">
+          <a href="/api/2015-12-25">
+            <span class="example-label">DATE STRING</span>
+            <code>/api/2015-12-25</code>
+            <span aria-hidden="true">&#8599;</span>
+          </a>
+          <a href="/api/1451001600000">
+            <span class="example-label">UNIX MILLISECONDS</span>
+            <code>/api/1451001600000</code>
+            <span aria-hidden="true">&#8599;</span>
+          </a>
+        </div>
 
-      <h2>Example Output:</h2>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-      </p>
-    </div>
-    <div class="footer">
-      <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
-      </p>
-    </div>
+        <div class="response">
+          <p class="eyebrow">RESPONSE</p>
+          <pre><code>{
+  "unix": 1451001600000,
+  "utc": "Fri, 25 Dec 2015 00:00:00 GMT"
+}</code></pre>
+        </div>
+      </section>
+    </main>
+    <footer>Clockwork Timestamp API &middot; Built with Node.js and Express</footer>
   </body>
 </html>
